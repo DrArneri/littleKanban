@@ -20,7 +20,9 @@
     --color-headercolor: rgb(255, 255, 255);
     --color-neutralbg: rgb(241, 245, 249);
     --color-textgray: rgb(156, 163, 175);
-    
+    --color-deskcolumn: rgba(0, 0, 0, 0.05);
+
+
     --font-inter: 'Inter', sans-serif;
     --font-geistmono: 'GeistMono', serif;
 }
