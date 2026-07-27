@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@font-face {
+    font-family: 'Inter';
+    src: url(/fonts/Inter18pt-Medium.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'GeistMono';
+    src: url(/fonts/GeistMono-Medium.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@theme {
+    --color-headercolor: rgb(255, 255, 255);
+    --color-neutralbg: rgb(241, 245, 249);
+    --color-textgray: rgb(156, 163, 175);
+    
+    --font-inter: 'Inter', sans-serif;
+    --font-geistmono: 'GeistMono', serif;
+}
