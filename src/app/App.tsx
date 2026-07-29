@@ -1,10 +1,11 @@
-import DeskColumn from "../widgets/DeskColumn"
 import Header from "../widgets/Header"
+import KanbanBoard from "../widgets/kanbanBoard/KanbanBoard"
+
 const App = () => {
   return (
     <div className="px-[4rem]">
       <Header/>
-      <DeskColumn title=""/>
+      <KanbanBoard/>
     </div>
     
   )

@@ -1,6 +1,13 @@
-const StatusDot = () => {
+import { cn } from "../lib/cn"
+
+type Props = {
+    solid: string,
+    shadow: string
+}
+
+const StatusDot = ({ solid, shadow }: Props) => {
   return (
-    <div className="bg-[rgb(239, 68, 68)] box-shadow: rgba(239, 68, 68, 0.2) w-8 h-8 rouded-[50%]"/>
+    <div className={cn('size-3 rounded-full', solid, shadow)} />
   )
 }
 

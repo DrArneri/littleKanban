@@ -22,6 +22,15 @@
     --color-textgray: rgb(156, 163, 175);
     --color-deskcolumn: rgba(0, 0, 0, 0.05);
 
+    --color-status-todo: rgb(239, 68, 68);
+    --color-status-in-progress: rgb(234, 179, 8);
+    --color-status-done: rgb(34, 197, 94);
+    --color-statusgray: rgb(107, 114, 128);
+
+
+    --shadow-status-todo: 0 0 0 3px rgba(239, 68, 68, 0.145);
+    --shadow-status-in-progress: 0 0 0 3px rgba(234, 179, 8, 0.145);
+    --shadow-status-done: 0 0 0 3px rgba(34, 197, 94, 0.145);
 
     --font-inter: 'Inter', sans-serif;
     --font-geistmono: 'GeistMono', serif;
