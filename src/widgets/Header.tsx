@@ -1,5 +1,5 @@
-import Button from "../shared/ui/Button"
-
+import { AddTaskButton } from "../features/addTask/ui/AddTaskButton"
+import AddTaskModal from "../features/addTask/ui/AddTaskModal"
 const Header = () => {
   return (
     <header className="w-full h-20 bg-headercolor flex justify-between items-center">
@@ -9,8 +9,9 @@ const Header = () => {
       </div>
       <div className="flex gap-4 items-center">
         <p className="text-l font-geistmono text-textgray">0 tasks</p>
-        <Button variant={'addTask'}>+ Add task</Button>
+        <AddTaskButton/>
       </div>
+      <AddTaskModal/>
     </header>
   )
 }

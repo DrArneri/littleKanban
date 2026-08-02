@@ -21,6 +21,7 @@
     --color-neutralbg: rgb(241, 245, 249);
     --color-textgray: rgb(156, 163, 175);
     --color-deskcolumn: rgba(0, 0, 0, 0.05);
+    --color-closebutton: rgba(0, 0, 0, 0.1);
 
     --color-status-todo: rgb(239, 68, 68);
     --color-status-in-progress: rgb(234, 179, 8);
