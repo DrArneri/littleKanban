@@ -1,6 +1,8 @@
+import type { SelectHTMLAttributes } from "react"
+
 type Props = {
     options: string[] 
-}
+} & SelectHTMLAttributes<HTMLSelectElement>
 
 const Select = ({options}:Props) => {
   return (
