@@ -1,9 +1,5 @@
 import type { Status } from "./Task"
-
-type Color = {
-    solid: string,
-    shadow: string
-}
+import type { Color } from "../../statusColor/model"
 
 type StatusColors = Record<Status, Color>
 

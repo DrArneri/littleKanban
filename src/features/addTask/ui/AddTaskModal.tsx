@@ -9,18 +9,14 @@ import { useTaskDraft } from "../model/TaskStore"
 import type { Status, Tag } from "../../../entities/task/model/Task"
 import { nanoid } from "nanoid"
 const AddTaskModal = () => {
-
-    const defaultStatus:Status = 'todo' 
-    const defaultTag: Tag = 'Backend'
-
     const {close, isOpen} = useModalStore()
 
     const {draft, addTask} = useTaskDraft()
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
-    const [status, setStatus] = useState<Status>(defaultStatus)
-    const [tag, setTag] = useState<Tag>(defaultTag)
+    const [status, setStatus] = useState<Status>('todo')
+    const [tag, setTag] = useState<Tag>('Backend')
 
     const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -32,6 +28,8 @@ const AddTaskModal = () => {
             tag: tag
         })
         setTimeout(close, 0)
+        console.log(draft);
+        
     }
 
     const handleClose = () => { 
@@ -52,11 +50,11 @@ const AddTaskModal = () => {
                 <fieldset className="flex gap-1">
                     <div className="flex flex-col gap-1 w-full">
                         <label className="font-geistmono tracking-wider text-xs text-statusgray">TAG</label>
-                        <Select options={tagOptions} onChange={(e:React.ChangeEvent<HTMLSelectElement>) => setTag(e.target.value as Tag)}/>
+                        <Select options={tagOptions} onChange={(e) => setTag(e.target.value as Tag)}/>
                     </div>
                     <div className="flex flex-col gap-1 w-full">
                         <label className="font-geistmono tracking-wider text-xs text-statusgray">STATUS</label>
-                        <Select options={statusOptions} onChange={(e:React.ChangeEvent<HTMLSelectElement>) => setStatus(e.target.value as Status)}/>
+                        <Select options={statusOptions} onChange={(e) => setStatus(e.target.value as Status)}/>
                     </div>
                 </fieldset>
                 <div className="flex gap-4">

@@ -16,6 +16,14 @@
     font-display: swap;
 }
 
+@font-face {
+    font-family: 'InterLight';
+    src: url(/fonts/Inter18pt-Light.woff2) format('woff2');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
     --color-headercolor: rgb(255, 255, 255);
     --color-neutralbg: rgb(241, 245, 249);
@@ -28,11 +36,27 @@
     --color-status-done: rgb(34, 197, 94);
     --color-statusgray: rgb(107, 114, 128);
 
-
     --shadow-status-todo: 0 0 0 3px rgba(239, 68, 68, 0.145);
     --shadow-status-in-progress: 0 0 0 3px rgba(234, 179, 8, 0.145);
     --shadow-status-done: 0 0 0 3px rgba(34, 197, 94, 0.145);
 
+    --color-tag-design: rgb(139, 92, 246);
+    --color-tag-bug: rgb(239, 68, 68);
+    --color-tag-docs: rgb(59, 130, 246);
+    --color-tag-backend: rgb(249, 115, 22);
+    --color-tag-feature: rgb(6, 182, 212);
+    --color-tag-devops: rgb(132, 204, 22);
+    --color-tag-research: rgb(236, 72, 153);
+
+    --color-bg-design: rgb(139, 92, 246, 0.094);
+    --color-bg-bug: rgb(239, 68, 68, 0.094);
+    --color-bg-docs: rgb(59, 130, 246, 0.094);
+    --color-bg-backend: rgb(249, 115, 22, 0.094);
+    --colot-bg-feature: rgb(6, 182, 212, 0.094);
+    --color-bg-devops: rgb(132, 204, 22, 0.094);
+    --color-bg-research: rgb(236, 72, 153, 0.094);
+
     --font-inter: 'Inter', sans-serif;
+    --font-interlight: 'InterLight', sans-serif;
     --font-geistmono: 'GeistMono', serif;
 }
