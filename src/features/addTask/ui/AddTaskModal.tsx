@@ -5,18 +5,26 @@ import { useModalStore } from "../model/ModalStore"
 import { tagOptions, statusOptions } from "../model/selectOptions"
 import Button from "../../../shared/ui/Button"
 import { useState, type SubmitEvent} from "react"
-import { useTaskDraft } from "../model/TaskStore"
+import { useTaskDraft } from "../../../entities/task/model/store"
 import type { Status, Tag } from "../../../entities/task/model/Task"
 import { nanoid } from "nanoid"
 const AddTaskModal = () => {
     const {close, isOpen} = useModalStore()
 
-    const {draft, addTask} = useTaskDraft()
+    const {addTask} = useTaskDraft()
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [status, setStatus] = useState<Status>('todo')
     const [tag, setTag] = useState<Tag>('Backend')
+
+    const reset = () => {
+    setDescription('')
+    setTitle('')
+    setStatus('todo')
+    setTag('Backend')
+    close()
+}
 
     const handleSubmit = (e: SubmitEvent<HTMLFormElement>) => {
         e.preventDefault()
@@ -27,9 +35,7 @@ const AddTaskModal = () => {
             status: status,
             tag: tag
         })
-        setTimeout(close, 0)
-        console.log(draft);
-        
+        reset()
     }
 
     const handleClose = () => { 
@@ -41,7 +47,7 @@ const AddTaskModal = () => {
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                 <fieldset className="flex flex-col gap-1">
                     <label className="font-geistmono tracking-wider text-xs text-statusgray">TITLE</label>
-                    <Input placeholder="What needs to be done?" onChange={(e) => setTitle(e.target.value)}/>
+                    <Input placeholder="What needs to be done?" onChange={(e) => setTitle(e.target.value)} required/>
                 </fieldset>
                 <fieldset className="flex flex-col gap-1">
                     <label className="font-geistmono text-xs tracking-wider text-statusgray">DESCRIPTION</label>

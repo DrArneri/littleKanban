@@ -3,14 +3,18 @@ import TagBar from "../../../shared/ui/TagBar"
 import { statusColors } from "../model/statusColors"
 import type { Task } from "../model/Task"
 import { tagColors } from "../model/tagColors"
+import { useDraggable } from "@dnd-kit/react"
 type Props = {
   task: Task
+  id: string
 }
 
-const TaskCard = ({task}:Props) => {
+const TaskCard = ({task, id}:Props) => {
 
+  const {ref} = useDraggable({id, type: 'task'})
+  
   return (
-    <div className="w-full min-h-30 bg-white rounded-[14px] shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex flex-col px-[1.5rem] py-[1rem] flex flex-col justify-between hover: cursor-grab">
+    <div ref={ref} className="w-full min-h-30 bg-white rounded-[14px] shadow-[0_1px_4px_rgba(0,0,0,0.06)] flex flex-col px-[1.5rem] py-[1rem] flex flex-col justify-between hover: cursor-grab">
       <div className="flex flex-col gap-1">
         <div className="flex justify-between">
           <p className="font-inter">{task.title}</p>

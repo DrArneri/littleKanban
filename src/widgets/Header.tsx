@@ -1,6 +1,10 @@
 import { AddTaskButton } from "../features/addTask/ui/AddTaskButton"
 import AddTaskModal from "../features/addTask/ui/AddTaskModal"
+import { useTaskDraft } from "../entities/task/model/store"
 const Header = () => {
+
+  const {draft} = useTaskDraft()
+
   return (
     <header className="w-full h-20 bg-headercolor flex justify-between items-center">
       <div className="flex gap-4 items-center">
@@ -8,7 +12,12 @@ const Header = () => {
         <p className="text-xl font-inter font-semibold">littleKanban</p>
       </div>
       <div className="flex gap-4 items-center">
-        <p className="text-l font-geistmono text-textgray">0 tasks</p>
+        {draft.length > 1 || draft.length === 0
+        ? <p className="text-l font-geistmono text-textgray">
+          {draft.length} tasks
+        </p>
+        : <p className="text-l font-geistmono text-textgray">
+          {draft.length} task</p>}
         <AddTaskButton/>
       </div>
       <AddTaskModal/>

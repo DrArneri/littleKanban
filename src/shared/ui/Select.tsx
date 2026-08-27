@@ -9,7 +9,7 @@ const Select = ({options, ...rest}:Props) => {
     <select className="w-full bg-white text-black px-2 py-2 rounded-xl border border-[rgba(0,0,0,0.1)] outline-none transition-colors duration-200" {...rest}>
         {options.map((option) => {
             return (
-                <option key={Math.random()} className='text-black' value={option}>{option}</option>
+                <option key={option} className='text-black' value={option}>{option}</option>
             )
         })}
     </select>
