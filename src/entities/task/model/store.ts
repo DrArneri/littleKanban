@@ -12,7 +12,7 @@ type TaskDraftStore = {
 
 const initialDraft: Task[] = []
 
-export const useTaskDraft = create<TaskDraftStore>()(
+export const useTaskStore = create<TaskDraftStore>()(
     persist(
         (set) => ({
             draft: initialDraft,

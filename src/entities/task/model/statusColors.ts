@@ -1,7 +1,7 @@
 import type { Status } from "./Task"
-import type { Color } from "../../statusColor/model"
+import type { StatusColor } from "../../statusColor/model"
 
-type StatusColors = Record<Status, Color>
+type StatusColors = Record<Status, StatusColor>
 
 
 export const statusColors: StatusColors = {

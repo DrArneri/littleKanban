@@ -2,7 +2,7 @@ import StatusDot from "../../shared/ui/StatusDot"
 import { statusColors } from "../../entities/task/model/statusColors"
 import type { Status } from "../../entities/task/model/Task"
 import TaskCard from "../../entities/task/ui/TaskCard"
-import { useTaskDraft } from "../../entities/task/model/store"
+import { useTaskStore } from "../../entities/task/model/store"
 import { useDroppable } from "@dnd-kit/react"
 type Props = {
   status: Status
@@ -11,7 +11,7 @@ type Props = {
 
 const DeskColumn = ({status, id}: Props) => {
 
-  const { draft } = useTaskDraft()
+  const { draft } = useTaskStore()
 
   const {isDropTarget, ref} = useDroppable({id, accept: 'task'})
   const data = draft.filter((task) => task.status === status)
@@ -28,7 +28,7 @@ const DeskColumn = ({status, id}: Props) => {
       <div className="flex flex-col gap-4 py-[1rem]">
         {data.map((item) => {
           return (
-            <TaskCard id={item.id} task={item}/>
+            <TaskCard key={item.id} id={item.id} task={item}/>
           )
         })}
       </div>

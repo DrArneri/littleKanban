@@ -5,18 +5,22 @@ import { useModalStore } from "../model/ModalStore"
 import { tagOptions, statusOptions } from "../model/selectOptions"
 import Button from "../../../shared/ui/Button"
 import { useState, type SubmitEvent} from "react"
-import { useTaskDraft } from "../../../entities/task/model/store"
+import { useTaskStore } from "../../../entities/task/model/store"
 import type { Status, Tag } from "../../../entities/task/model/Task"
 import { nanoid } from "nanoid"
+import { cn } from "../../../shared/lib/cn"
+import { buttonVariants } from "../../../shared/ui/buttonVariants"
 const AddTaskModal = () => {
     const {close, isOpen} = useModalStore()
 
-    const {addTask} = useTaskDraft()
+    const {addTask} = useTaskStore()
 
     const [title, setTitle] = useState('')
     const [description, setDescription] = useState('')
     const [status, setStatus] = useState<Status>('todo')
     const [tag, setTag] = useState<Tag>('Backend')
+
+    const [letAddTask, setLetAddTask] = useState(false)
 
     const reset = () => {
     setDescription('')
@@ -47,7 +51,14 @@ const AddTaskModal = () => {
             <form className="flex flex-col gap-5" onSubmit={handleSubmit}>
                 <fieldset className="flex flex-col gap-1">
                     <label className="font-geistmono tracking-wider text-xs text-statusgray">TITLE</label>
-                    <Input placeholder="What needs to be done?" onChange={(e) => setTitle(e.target.value)} required/>
+                    <Input placeholder="What needs to be done?" onChange={(e) => {
+                        if (title.length + 1 > 0){
+                            setLetAddTask(true)
+                        }
+                        if (title.length - 1 == 0){
+                            setLetAddTask(false)
+                        }
+                        setTitle(e.target.value)}} required/>
                 </fieldset>
                 <fieldset className="flex flex-col gap-1">
                     <label className="font-geistmono text-xs tracking-wider text-statusgray">DESCRIPTION</label>
@@ -65,7 +76,7 @@ const AddTaskModal = () => {
                 </fieldset>
                 <div className="flex gap-4">
                     <Button variant={"modalCancel"} className="w-3/5" onClick={handleClose} type="button">Cancel</Button>
-                    <Button variant={"modalCancel"} type="submit">AddTask</Button>
+                    <Button className={`${letAddTask ? cn(buttonVariants({variant: 'modalAddTask'}), 'border-none') : cn(buttonVariants({variant: 'modalCancel'}), 'cursor-not-allowed')}`}  type="submit">AddTask</Button>
                 </div>
             </form> 
         </Modal>

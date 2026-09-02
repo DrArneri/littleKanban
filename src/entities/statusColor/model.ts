@@ -1,4 +1,4 @@
-export type Color = {
+export type StatusColor = {
     solid: string,
     shadow: string
 }

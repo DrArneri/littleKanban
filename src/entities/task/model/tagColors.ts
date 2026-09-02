@@ -1,7 +1,7 @@
 import type { Tag } from "./Task"
-import type { Color } from "../../tagColor/model"
+import type { TagColor } from "../../tagColor/model"
 
-type TagColors = Record<Tag, Color>
+type TagColors = Record<Tag, TagColor>
 
 export const tagColors:TagColors = {
     'Design': {

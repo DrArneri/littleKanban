@@ -1,10 +1,10 @@
 import DeskColumn from "./DeskColumn"
 import { DragDropProvider } from "@dnd-kit/react"
-import { useTaskDraft } from "../../entities/task/model/store"
+import { useTaskStore } from "../../entities/task/model/store"
 import type { Status } from "../../entities/task/model/Task"
 const KanbanBoard = () => {
 
-  const {moveTask} = useTaskDraft()
+  const {moveTask} = useTaskStore()
 
   return (
     <DragDropProvider

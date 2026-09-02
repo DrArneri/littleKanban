@@ -1,9 +1,9 @@
 import { AddTaskButton } from "../features/addTask/ui/AddTaskButton"
 import AddTaskModal from "../features/addTask/ui/AddTaskModal"
-import { useTaskDraft } from "../entities/task/model/store"
+import { useTaskStore } from "../entities/task/model/store"
 const Header = () => {
 
-  const {draft} = useTaskDraft()
+  const {draft} = useTaskStore()
 
   return (
     <header className="w-full h-20 bg-headercolor flex justify-between items-center">

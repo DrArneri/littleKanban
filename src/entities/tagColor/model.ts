@@ -1,4 +1,4 @@
-export type Color = {
+export type TagColor = {
     str: string;
     bg: string
 }
