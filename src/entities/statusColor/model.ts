@@ -1,5 +1,4 @@
 export type StatusColor = {
-    solid: string,
-    shadow: string
-}
-
+  solid: string;
+  shadow: string;
+};

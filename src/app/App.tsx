@@ -1,14 +1,13 @@
-import Header from "../widgets/Header"
-import KanbanBoard from "../widgets/kanbanBoard/KanbanBoard"
+import Header from "../widgets/Header";
+import KanbanBoard from "../widgets/kanbanBoard/KanbanBoard";
 
 const App = () => {
   return (
     <div className="px-[4rem]">
-      <Header/>
-      <KanbanBoard/>
+      <Header />
+      <KanbanBoard />
     </div>
-    
-  )
-}
+  );
+};
 
-export default App
+export default App;

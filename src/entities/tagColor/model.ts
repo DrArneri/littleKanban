@@ -1,4 +1,4 @@
 export type TagColor = {
-    str: string;
-    bg: string
-}
+  str: string;
+  bg: string;
+};
