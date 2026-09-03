@@ -20,7 +20,7 @@ const AddTaskModal = () => {
   const [status, setStatus] = useState<Status>("todo");
   const [tag, setTag] = useState<Tag>("Backend");
 
-  const [letAddTask, setLetAddTask] = useState(false);
+  const canAddTask = title.trim().length > 0
 
   const reset = () => {
     setDescription("");
@@ -57,12 +57,6 @@ const AddTaskModal = () => {
           <Input
             placeholder="What needs to be done?"
             onChange={(e) => {
-              if (title.length + 1 > 0) {
-                setLetAddTask(true);
-              }
-              if (title.length - 1 == 0) {
-                setLetAddTask(false);
-              }
               setTitle(e.target.value);
             }}
             required
@@ -108,7 +102,7 @@ const AddTaskModal = () => {
             Cancel
           </Button>
           <Button
-            className={`${letAddTask ? cn(buttonVariants({ variant: "modalAddTask" }), "border-none") : cn(buttonVariants({ variant: "modalCancel" }), "cursor-not-allowed")}`}
+            className={`${canAddTask ? cn(buttonVariants({ variant: "modalAddTask" }), "border-none") : cn(buttonVariants({ variant: "modalCancel" }), "cursor-not-allowed")}`}
             type="submit"
           >
             AddTask
